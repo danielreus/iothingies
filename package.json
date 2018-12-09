@@ -1,0 +1,16 @@
+{
+  "name": "iothingies",
+  "version": "0.0.1",
+  "description": "Control several in-home connected thingies",
+  "main": "iothingies.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Reus",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
