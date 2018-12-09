@@ -2,9 +2,7 @@
 const amqplib = require('amqplib');
 const express = require('express');
 const bodyParser = require('body-parser');
-const app = express();
-
-app.use(bodyParser.raw({type: '*/*'}));
+const config = require('./config');
 
 const log = {
 	w: console.warn,
@@ -12,7 +10,12 @@ const log = {
 	d: console.log,
 };
 
-const amqp = amqplib.connect('amqp://iothingies:ztBgSMtu5@broker.mythingy.net');
+log.d('brokerUrl: ' + config.brokerUrl);
+
+const app = express();
+app.use(bodyParser.raw({type: '*/*'}));
+
+const amqp = amqplib.connect(config.brokerUrl);
 let amqpChannel;
 const port = 3000;
 
